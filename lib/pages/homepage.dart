@@ -37,6 +37,27 @@ class _homepageState extends State<homepage> {
           child: Image.asset('assets/images/Bitmoji.jpeg'),
         ),
       ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Container(
+              padding: const EdgeInsets.all(4.0),
+              height: 100,
+              width: double.infinity,
+              color: Color.fromARGB(255, 236, 216, 208),
+              child: Center(
+                child: Text(
+                  "discover how to be creative",
+                  style: TextStyle(
+                      fontSize: 48,
+                      color: const Color.fromARGB(255, 245, 150, 150)),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
