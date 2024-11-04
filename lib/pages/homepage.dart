@@ -19,7 +19,7 @@ class _homepageState extends State<homepage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              "Hi, John Smith 👋",
+              "Hi, Naol Legesse 👋",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
@@ -42,20 +42,48 @@ class _homepageState extends State<homepage> {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
-              padding: const EdgeInsets.all(4.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(18),
+                color: Color.fromARGB(255, 243, 231, 226),
+              ),
+              padding: const EdgeInsets.all(24.0),
               height: 100,
               width: double.infinity,
-              color: Color.fromARGB(255, 236, 216, 208),
-              child: Center(
-                child: Text(
-                  "discover how to be creative",
+              child: Row(children: [
+                Text(
+                  "Discover How \n To Be Creative",
                   style: TextStyle(
-                      fontSize: 48,
-                      color: const Color.fromARGB(255, 245, 150, 150)),
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: const Color.fromARGB(255, 231, 125, 125)),
                 ),
-              ),
+                SizedBox(width: 56),
+                Transform.scale(
+                  scale: 1.7, // Increases the size by 1.5 times the original
+                  child: Image.asset('assets/images/rocket.png'),
+                )
+              ]),
             ),
           ),
+          Row(children: [
+            SizedBox(width: 20),
+            Text(
+              'Instructor',
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(width: 180),
+            Text(
+              'See All',
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(255, 231, 125, 125)),
+            )
+          ]),
         ],
       ),
     );
