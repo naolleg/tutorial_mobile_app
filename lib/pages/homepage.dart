@@ -2,9 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tutorial_mobile_app/model/instructors.dart';
 
 class homepage extends StatefulWidget {
-  const homepage({super.key});
+  homepage({super.key});
+
+  List<InstructorModel> instructors = [];
+  void _getInitialInfo() {
+    instructors = InstructorModel.getInstructors();
+  }
 
   @override
   State<homepage> createState() => _homepageState();
