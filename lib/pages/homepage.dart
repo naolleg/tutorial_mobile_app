@@ -20,7 +20,7 @@ class _homepageState extends State<homepage> {
   @override
   void initState() {
     super.initState();
-    widget._getInitialInfo(); // Load instructors when initializing
+    widget._getInitialInfo();
   }
 
   @override
@@ -152,6 +152,22 @@ class _homepageState extends State<homepage> {
                   ),
                 );
               },
+            ),
+          ),
+          SizedBox(height: 28),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Courses',
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
             ),
           ),
         ],
