@@ -173,7 +173,7 @@ class _homepageState extends State<homepage> {
                     });
                   },
                   child: Text(
-                    'All Courses',
+                    'All',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -190,7 +190,7 @@ class _homepageState extends State<homepage> {
                     });
                   },
                   child: Text(
-                    'Featured',
+                    'Design',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -207,7 +207,7 @@ class _homepageState extends State<homepage> {
                     });
                   },
                   child: Text(
-                    'Popular',
+                    'Programming',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -224,7 +224,7 @@ class _homepageState extends State<homepage> {
                     });
                   },
                   child: Text(
-                    'New',
+                    'Gaming',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -238,30 +238,6 @@ class _homepageState extends State<homepage> {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Favorite',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: 0, // Set the initial selected index
-        onTap: (index) {
-          // handle the tap if needed
-        },
       ),
     );
   }
