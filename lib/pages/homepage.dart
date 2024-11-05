@@ -18,6 +18,12 @@ class homepage extends StatefulWidget {
 
 class _homepageState extends State<homepage> {
   @override
+  void initState() {
+    super.initState();
+    widget._getInitialInfo(); // Load instructors when initializing
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -44,6 +50,7 @@ class _homepageState extends State<homepage> {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(20.0),
@@ -55,41 +62,98 @@ class _homepageState extends State<homepage> {
               padding: const EdgeInsets.all(24.0),
               height: 100,
               width: double.infinity,
-              child: Row(children: [
-                Text(
-                  "Discover How \n To Be Creative",
-                  style: TextStyle(
+              child: Row(
+                children: [
+                  Text(
+                    "Discover How \n To Be Creative",
+                    style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(255, 231, 125, 125)),
-                ),
-                SizedBox(width: 56),
-                Transform.scale(
-                  scale: 1.7, // Increases the size by 1.5 times the original
-                  child: Image.asset('assets/images/rocket.png'),
-                )
-              ]),
-            ),
-          ),
-          Row(children: [
-            SizedBox(width: 20),
-            Text(
-              'Instructor',
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+                      color: const Color.fromARGB(255, 231, 125, 125),
+                    ),
+                  ),
+                  SizedBox(width: 56),
+                  Transform.scale(
+                    scale: 1.7,
+                    child: Image.asset('assets/images/rocket.png'),
+                  ),
+                ],
               ),
             ),
-            SizedBox(width: 180),
-            Text(
-              'See All',
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: const Color.fromARGB(255, 231, 125, 125)),
-            )
-          ]),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Instructor',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'See All',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: const Color.fromARGB(255, 231, 125, 125),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 100,
+            padding: EdgeInsets.only(left: 20.0),
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: widget.instructors.length,
+              itemBuilder: (context, index) {
+                final instructor = widget.instructors[index];
+                return Container(
+                  width: 80,
+                  margin: EdgeInsets.only(right: 10.0),
+                  padding: EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(10.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 4.0,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Image.asset(
+                          instructor.profilePath,
+                          height: 60.0,
+                          width: 60.0,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(height: 8.0),
+                      Text(
+                        instructor.name,
+                        style: TextStyle(
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
