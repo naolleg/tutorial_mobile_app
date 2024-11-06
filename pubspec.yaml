@@ -62,12 +62,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
 
   assets:
-    - assets/images/Bitmoji.jpeg
-    - assets/images/rocket.png
-    - assets/images/_.jpeg
-    - assets/images/enter my mind.jpeg
-    - assets/images/Type 4_1 Ed Sheeran.jpeg
-    - assets/images/Martin Schoeller.jpeg
+    - assets/images/
+
 
    
 

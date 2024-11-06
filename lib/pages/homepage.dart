@@ -1,10 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tutorial_mobile_app/model/courses.dart';
 import 'package:tutorial_mobile_app/model/instructors.dart';
 import 'package:tutorial_mobile_app/widgets/appbar.dart';
 import 'package:tutorial_mobile_app/widgets/courseSubNav.dart';
+import 'package:tutorial_mobile_app/widgets/coursesList.dart';
 import 'package:tutorial_mobile_app/widgets/discover.dart';
 import 'package:tutorial_mobile_app/widgets/instructorslist.dart';
 
@@ -12,6 +11,8 @@ class homepage extends StatefulWidget {
   homepage({super.key});
 
   List<InstructorModel> instructors = [];
+  List<CourseModel> courses = CourseModel.getCourses(); // Load courses here
+
   void _getInitialInfo() {
     instructors = InstructorModel.getInstructors();
   }
@@ -21,7 +22,7 @@ class homepage extends StatefulWidget {
 }
 
 class _homepageState extends State<homepage> {
-  int selectedCourseIndex = 0; // Track the selected course index
+  int selectedCourseIndex = 0;
 
   @override
   void initState() {
@@ -83,6 +84,7 @@ class _homepageState extends State<homepage> {
               setState(() => selectedCourseIndex = index);
             },
           ),
+          courseList(courses: widget.courses),
         ],
       ),
     );

@@ -12,28 +12,28 @@ class InstructorModel {
 
     instructors.add(
       InstructorModel(
-        name: 'Samrita',
+        name: 'Semerech',
         profilePath: 'assets/images/_.jpeg',
       ),
     );
 
     instructors.add(
       InstructorModel(
-        name: 'Tyrone',
+        name: 'Tilahun',
         profilePath: 'assets/images/enter my mind.jpeg',
       ),
     );
 
     instructors.add(
       InstructorModel(
-        name: 'Eddie',
+        name: 'Eddie ginger',
         profilePath: 'assets/images/Type 4_1 Ed Sheeran.jpeg',
       ),
     );
 
     instructors.add(
       InstructorModel(
-        name: 'Messi',
+        name: 'GOAT',
         profilePath: 'assets/images/Martin Schoeller.jpeg',
       ),
     );
