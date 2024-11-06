@@ -20,15 +20,20 @@ class Coursesubnav extends StatelessWidget {
           for (int index = 0; index < 4; index++)
             TextButton(
               onPressed: () => onCourseSelected(index),
-              child: Text(
-                ['All', 'Design', 'Programming', 'Gaming'][index],
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  decoration: selectedCourseIndex == index
-                      ? TextDecoration.underline
-                      : TextDecoration.none,
-                ),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Text(
+                    ['All', 'Design', 'Programming', 'Gaming'][index],
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: selectedCourseIndex == index
+                          ? Colors.black
+                          : Colors.grey,
+                    ),
+                  ),
+                ],
               ),
             ),
         ],
