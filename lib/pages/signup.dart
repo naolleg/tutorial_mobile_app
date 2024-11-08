@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, curly_braces_in_flow_control_structures, no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
+import 'package:tutorial_mobile_app/pages/signin.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -24,7 +25,6 @@ class Signup extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Email TextField
               TextFormField(
                 controller: _emailController,
                 decoration: InputDecoration(
@@ -116,6 +116,13 @@ class Signup extends StatelessWidget {
                 ),
                 child: Text("Sign up", style: TextStyle(color: Colors.white)),
               ),
+
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Signin()));
+                  },
+                  child: Text("Already have an account,signin"))
             ],
           ),
         ),

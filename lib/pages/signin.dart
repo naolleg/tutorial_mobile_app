@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tutorial_mobile_app/pages/signup.dart';
 
 class Signin extends StatelessWidget {
   const Signin({super.key});
@@ -67,6 +68,12 @@ class Signin extends StatelessWidget {
                 ),
                 child: Text("Sign In", style: TextStyle(color: Colors.white)),
               ),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Signup()));
+                  },
+                  child: Text("don't have an account, signup"))
             ],
           ),
         ),
