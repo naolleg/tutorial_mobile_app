@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:tutorial_mobile_app/pages/signup.dart';
+// ignore_for_file: prefer_const_constructors, curly_braces_in_flow_control_structures, no_leading_underscores_for_local_identifiers
 
-class Signin extends StatelessWidget {
-  const Signin({super.key});
+import 'package:flutter/material.dart';
+import 'package:tutorial_mobile_app/pages/signin.dart';
+
+class Signup extends StatelessWidget {
+  const Signup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,6 @@ class Signin extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Email TextField
               TextFormField(
                 controller: _emailController,
                 decoration: InputDecoration(
@@ -34,8 +35,8 @@ class Signin extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
 
+              SizedBox(height: 20),
               // Password TextField
               TextFormField(
                 controller: _passwordController,
@@ -53,11 +54,14 @@ class Signin extends StatelessWidget {
               ),
               SizedBox(height: 20),
 
-              // Sign In Button
+              // Sign up Button
               ElevatedButton(
                 onPressed: () {
-                  print("Email: ${_emailController.text}");
-                  print("Password: ${_passwordController.text}");
+                  if (_) {
+                    print("Email: ${_emailController.text}");
+                    print("Password: ${_passwordController.text}");
+                  } else
+                    print("");
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(
@@ -66,8 +70,9 @@ class Signin extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                child: Text("Sign In", style: TextStyle(color: Colors.white)),
+                child: Text("Sign in", style: TextStyle(color: Colors.white)),
               ),
+
               TextButton(
                   onPressed: () {
                     Navigator.of(context).push(
