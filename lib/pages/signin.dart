@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial_mobile_app/pages/signin.dart';
 
-class Signup extends StatelessWidget {
-  const Signup({super.key});
+class Signin extends StatelessWidget {
+  const Signin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +57,10 @@ class Signup extends StatelessWidget {
               // Sign up Button
               ElevatedButton(
                 onPressed: () {
-                  if (_) {
-                    print("Email: ${_emailController.text}");
-                    print("Password: ${_passwordController.text}");
-                  } else
-                    print("");
+                  print("Email: ${_emailController.text}");
+                  print("Password: ${_passwordController.text}");
+
+                  print("");
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(
@@ -76,9 +75,9 @@ class Signup extends StatelessWidget {
               TextButton(
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Signup()));
+                        MaterialPageRoute(builder: (context) => Signin()));
                   },
-                  child: Text("don't have an account, signup"))
+                  child: Text("don't have an account, Signin"))
             ],
           ),
         ),
