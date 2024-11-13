@@ -26,7 +26,7 @@ class _IntroScreenState extends State<IntroScreen> {
       centerBallRadius: 150,
       sideDotsBgColor: Colors.black,
       headerBgColor: Colors.blue.shade900, // Dark blue color
-      title: 'Welcome to NL academy App!',
+      title: 'Welcome to NL Academy App!',
       description: 'You will follow your courses using this app.',
       imageHeightMultiple: 10,
       key: UniqueKey(),
@@ -41,7 +41,7 @@ class _IntroScreenState extends State<IntroScreen> {
       centerBallRadius: 150,
       sideDotsBgColor: Colors.black,
       headerBgColor: Colors.blue.shade900, // Dark blue color
-      title: 'Nl academy students',
+      title: 'NL Academy Students',
       description: 'Students use this app to follow their courses.',
       imageHeightMultiple: 10,
       key: UniqueKey(),
@@ -91,12 +91,19 @@ class _IntroScreenState extends State<IntroScreen> {
         isFullScreen: true,
         footerRadius: 20,
         onDone: () {
-          Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(
-              builder: (_) => const Signin(),
-            ),
-            (route) => false,
-          );
+          // Debugging print statement to verify onDone is triggered
+          print('Done button pressed');
+          try {
+            Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(
+                builder: (_) => const Signin(),
+              ),
+              (route) => false,
+            );
+          } catch (e) {
+            // Print any navigation errors
+            print('Navigation error: $e');
+          }
         },
       ),
     );
