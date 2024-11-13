@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial_mobile_app/pages/homepage.dart';
+import 'package:tutorial_mobile_app/pages/introPage.dart';
 import 'package:tutorial_mobile_app/pages/signin.dart';
 import 'package:tutorial_mobile_app/pages/signup.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Signup(),
+      home: IntroScreen(),
     );
   }
 }
